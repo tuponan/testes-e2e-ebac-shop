@@ -8,6 +8,7 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
     });
 
     it('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
+        var quantidade = 10
         let emailFaker = faker.internet.email()
 
 
@@ -26,10 +27,8 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         cy.get('#primary-menu > .menu-item-629 > a').click()
 
         cy.addP('Ajax Full-Zip Sweatshirt', 'XS', 'Red', 1)
-        cy.get('#primary-menu > .menu-item-629 > a').click()
 
-        cy.get('.dropdown-toggle > .mini-cart-items').should
-      
+        cy.get('.dropdown-toggle > .mini-cart-items').should('contain', quantidade)
     });
 
 
